@@ -27,8 +27,28 @@ To install the Streamlit app, follow these steps:
 git clone https://github.com/yourusername/linkedin-data-visualization-app.git
 cd linkedin-data-visualization-app
 pip install -r requirements.txt
+```
 
 ### Running the App
 To run the app, navigate to the project directory and run the following command:
-streamlit run app.py
+```bash streamlit run app.py```
+
+### Usage
+After running the app, follow these steps:
+1. Open the Streamlit interface in your web browser.
+2. Use the file uploader to upload your LinkedIn CSV data file.
+3. The app will display visualizations and provide a download link for the Excel file.
+4. Refer to the sidebar for instructions on how to download your LinkedIn data.
+
+### Contributing to the App
+To contribute to the LinkedIn Data Visualization App, follow these steps:
+1. Fork this repository.
+2. Create a new branch: git checkout -b <branch_name>.
+3. Make your changes and commit them: git commit -m '<commit_message>'
+4. Push to the original branch: git push origin <project_name>/<location>
+5. Create the pull request.
+
+### Contact
+If you want to contact me, you can reach me amaria.hendre@gmail.com.
+
 
