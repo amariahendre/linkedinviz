@@ -27,3 +27,8 @@ To install the Streamlit app, follow these steps:
 git clone https://github.com/yourusername/linkedin-data-visualization-app.git
 cd linkedin-data-visualization-app
 pip install -r requirements.txt
+
+### Running the App
+To run the app, navigate to the project directory and run the following command:
+streamlit run app.py
+
