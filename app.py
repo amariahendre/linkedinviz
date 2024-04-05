@@ -41,10 +41,21 @@ if uploaded_file is not None:
     st.subheader('Download the Data as Excel')
 
     # Allow user to download the DataFrame as an Excel file
-    st.download_button(label='📥 Download Excel', 
-                       data=to_excel(df),
-                       file_name='linkedin_connections.xlsx',
-                       mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+    # st.download_button(label='📥 Download Excel', 
+    #                    data=to_excel(df),
+    #                    file_name='linkedin_connections.xlsx',
+    #                    mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+
+    flnme = 'linkedin_connections.xlsx'
+    if flnme:
+        if not flnme.endswith(".xlsx"):  # add file extension if it is forgotten
+            flnme = flnme + ".xlsx"
+
+        buffer = BytesIO()
+        with pd.ExcelWriter(buffer, engine='xlsxwriter') as writer:
+            df.to_excel(writer, sheet_name='Report')
+        
+        st.download_button(label='📥 Download Excel', data=buffer.getvalue(), file_name=flnme, mime="application/vnd.ms-excel")
 
     # Ensure the necessary columns exist
     if all(column in df.columns for column in ['Company', 'Position', 'Connected On']):
